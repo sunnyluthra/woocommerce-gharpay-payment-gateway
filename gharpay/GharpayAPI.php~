@@ -6,6 +6,7 @@
  *
  * @author khaja Naquiuddin khaja@gharpay.in
  */
+require_once 'config.php';
 if(ERROR_ON)
 {
 	ini_set('display_errors', 1);
@@ -26,9 +27,9 @@ class GharpayAPI
     private $_url;
     function __construct()
     {
-    	$this->_username = '';
-    	$this->_password= '';
-    	$this->_url= '';
+    	$this->_username = USERNAME;
+    	$this->_password= PASSWORD;
+    	$this->_url= URL;
     }
     public function getUsername()
     {
