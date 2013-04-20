@@ -9,7 +9,7 @@ Allows you to use GharPay payment gateway with the WooCommerce plugin.
 
 == Description ==
 
-This is the GharPay payment gateway for WooCommerce. Allows you to use GharPay payment gateway with the WooCommerce plugin. Gharpay is a doorstep payment network with a human face.
+Finally got some free time to code GharPay payment gateway for WooCommerce. Gharpay is a doorstep payment network with a human face. For support please visit the following link.
 
 
 For Support Please Visit [http://www.mrova.com/?p=1216](http://www.mrova.com/?p=1216)
