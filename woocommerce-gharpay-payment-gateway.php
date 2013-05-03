@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce GharPay gateway
 Plugin URI: http://www.mrova.com/
 Description: Extends WooCommerce with mrova GharPay Payment gateway.
-Version: 1.0
+Version: 1.1
 Author: mRova
 Author URI: http://www.mrova.com/
 
@@ -44,11 +44,11 @@ function woocommerce_mrova_gharpay_init() {
       $this -> init_form_fields();
       $this -> init_settings();
 
-      $this -> title        = $this -> settings['title'];
-      $this -> description  = $this -> settings['description'];
-      $this -> username     = $this -> settings['username'];
-      $this -> password     = $this -> settings['password'];
-      $this -> instructions = $this -> settings['instructions'];
+      $this -> title        = $this -> get_option('title');
+      $this -> description  = $this -> get_option('description');
+      $this -> username     = $this -> get_option('username');
+      $this -> password     = $this -> get_option('password');
+      $this -> instructions = $this -> get_option('instructions');
       $this -> service_url  = 'http://services.gharpay.in';
 
       //init Gharpay Object
@@ -207,8 +207,9 @@ function woocommerce_mrova_gharpay_init() {
       global $woocommerce;
       $order = new WC_Order( $order_id );
 
+      $formatted_address = str_replace( '<br />', ', ', $order -> get_formatted_billing_address() );
       $customer_details= array(
-        'address'   => str_replace( '<br/>', ', ', $order -> get_formatted_billing_address() ),
+        'address'   => $formatted_address,
         'contactNo' => $order -> billing_phone,
         'firstName' => $order -> billing_first_name,
         'lastName'  => $order -> billing_last_name,
@@ -335,10 +336,10 @@ function woocommerce_mrova_gharpay_init() {
    * Add the Gateway to WooCommerce
    * */
   function woocommerce_add_mrova_gharpay_gateway( $methods ) {
-    $methods[] = 'WC_Mrova_GharPay';
+     $methods[] = 'WC_Mrova_GharPay';
     return $methods;
   }
-
+ 
   add_filter( 'woocommerce_payment_gateways', 'woocommerce_add_mrova_gharpay_gateway' );
 }
 

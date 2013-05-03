@@ -3,7 +3,7 @@ Contributors: mRova
 Tags: WooCommerce, Payment Gateway, GharPay
 Requires at least: 3.3
 Tested up to: 3.5
-Stable tag: 1.0
+Stable tag: 1.1
 
 Allows you to use GharPay payment gateway with the WooCommerce plugin.
 
@@ -32,3 +32,5 @@ For Support Please Visit [http://www.mrova.com/?p=1216](http://www.mrova.com/?p=
 
 = 1.0 =
 * First Public Release.
+= 1.1 =
+* Address formatting for gharpay.
